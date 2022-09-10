@@ -1,0 +1,9 @@
+<h2>Movie Details</h2>
+
+<div *ngIf="movie">
+  <h3>{{ movie.title }}</h3>
+  <h4>{{ movie.price | currency }}</h4>
+  <p>{{ movie.description }}</p>
+</div>
+<!-- ../../assets/ -->
+<img src="{{'./assets/' + movie.image}}"  alt="Girl in a jacket" width="500" height="600"> 

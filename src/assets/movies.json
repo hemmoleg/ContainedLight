@@ -1,0 +1,23 @@
+{ "movies" : [
+  {
+    "id": "dreck",
+    "title": "dreck",
+    "price": 799,
+    "description": "Dreck description 2222",
+    "image": "dreck.png"
+  },
+  {
+    "id": "der-fliegende-klassenpimmel",
+    "title": "Der fliegende Klassenpimmel",
+    "price": 699,
+    "description": "A great phone with one of the best cameras",
+    "image": "der-fliegende-klassenpimmel.png"
+  },
+  {
+    "id": "omas-von-der-muellhalde",
+    "title": "Omas von der Müllhalde",
+    "price": 299,
+    "description": "nix",
+    "image": "omas-von-der-muellhalde.png"
+  }
+]}

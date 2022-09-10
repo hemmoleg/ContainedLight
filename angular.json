@@ -28,7 +28,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.less"
+              "src/styles.less",
+              "src/app/home/home.component.less",
+              "src/app/movie/movie.component.less",
+              "src/app/app.component.less"
             ],
             "scripts": []
           },

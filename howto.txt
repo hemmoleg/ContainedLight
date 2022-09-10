@@ -1,0 +1,3 @@
+movies.json:
+  id: movies title seperated by -
+  img: name of the image file in the assets folder (must follow the same rule as id)

@@ -1,16 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MovieComponent } from './movie/movie.component';
+
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MovieComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot([
+      {path: '', component: HomeComponent},
+      {path: 'movies/:movieID', component: MovieComponent}
+    ]),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
