@@ -19,6 +19,7 @@
           "options": {
             "outputPath": "dist/contained-scheiss",
             "index": "src/index.html",
+            "baseHref": "/contained-light/",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",

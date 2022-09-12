@@ -20,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
       {path: 'movies/:movieID', component: MovieComponent}
-    ]),
+    ], {useHash: true}),
     HttpClientModule
   ],
   providers: [],
