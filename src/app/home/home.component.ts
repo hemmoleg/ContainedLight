@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { MovieData, MovieDataJSON } from '../MovieData';
+import { MovieData } from '../MovieData';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-home',
@@ -11,15 +11,14 @@ export class HomeComponent implements OnInit {
 
   movies: MovieData[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private moviesService: MoviesService) { 
+    this.moviesService.getMovies().subscribe(data => {
+      this.movies = data.movies;
+    })
+  }
 
   ngOnInit(): void {
-    let req = this.http.get<MovieDataJSON>("assets/movies.json");
-    req.subscribe(data => {
-      this.movies = data.movies;
-    });
-
-    //https://angular.io/guide/http
+    
   }
 
 }
