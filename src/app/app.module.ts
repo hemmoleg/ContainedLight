@@ -9,17 +9,20 @@ import { HomeComponent } from './home/home.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { MoviesService } from './movies.service';
+import { MovieSelectionComponent } from './movie-selection/movie-selection.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MovieComponent,
-    HomeComponent
+    HomeComponent,
+    MovieSelectionComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
+      {path: 'movies', component: MovieSelectionComponent},
       {path: 'movies/:movieID', component: MovieComponent}
     ], {useHash: true}),
     HttpClientModule
