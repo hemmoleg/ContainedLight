@@ -1,0 +1,65 @@
+//toggle 2
+.toggle-container{
+  display: flex;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+//toggle 3
+.l {
+	display: block;
+	margin-bottom: 1.5em;
+	
+	font-size: 1.3em;
+	border: 0.15em solid black;
+	border-radius: 0.75em;
+	
+	color: #fdea7b;
+	display: inline-flex;
+	align-items: center;
+	margin: auto;
+	padding: 0.15em;
+	width: 2.7em;
+	height: 1.5em;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.l:before, .l:after {
+	box-sizing: border-box;
+	content: "";
+	display: block;
+}
+.l:before {
+	background-color: rgb(248 250 252);
+	border-radius:50%;
+	width: 0.9em;
+	height: 0.9em;
+	transition: background-color 0.5s ease-out, transform 0.5s ease-out;
+	z-index: 1;
+}
+.l:after {
+	background:
+		repeating-linear-gradient(#000 20%,#000 20%,#000 40%) 0 50% / 50% 100%,
+		radial-gradient(circle,#fff 25%, transparent 26%);
+	background-repeat: no-repeat;
+	border: 0.25em solid transparent;
+	border-left: 0.4em solid #555;
+	border-right: 0 solid transparent;
+	transition: border-left-color 0.5s ease-out, transform 0.5s ease-out;
+	transform: translateX(-22.5%);
+	transform-origin: 25% 50%;
+	width: 1.2em;
+	height: 0.9em;
+	margin-left: -0.1em;
+}
+/* Checked */
+.l:checked:before {
+	background-color: #d7d7d7;
+	transform: translateX(125%)
+}
+.l:checked:after {
+	border-left-color: #d7d7d7;
+	transform: translateX(4%) rotateY(180deg);
+}

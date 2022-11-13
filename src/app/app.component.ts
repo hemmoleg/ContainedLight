@@ -14,7 +14,7 @@ export class AppComponent {
 
     if(this.lightsOn){
       document.getElementsByTagName("html")[0].className =
-        document.getElementsByTagName("html")[0].className.replace(" dark", "");
+        document.getElementsByTagName("html")[0].className.replace("dark", "");
     } else {
       document.getElementsByTagName("html")[0].className =
         document.getElementsByTagName("html")[0].className + " dark";
