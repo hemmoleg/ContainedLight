@@ -1,4 +1,7 @@
-<p>movie-selection works!</p>
-<h3 *ngFor="let movie of movies">
-  <a [routerLink]="['/movies', movie.id]">{{movie.title}}</a>
-</h3>
+<div class="h-[40vh]"></div>
+<div class="p-6 flex flex-col justify-center">
+  <span class="text-neutral-900 dark:text-slate-50 text-4xl font-bold text-center pb-16">Films</span>
+  <span class="text-neutral-900 dark:text-slate-50 text-l text-center" *ngFor="let movie of movies">
+    <a [routerLink]="['/movies', movie.id]">{{movie.title}}</a>
+  </span>
+</div>

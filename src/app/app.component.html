@@ -19,7 +19,10 @@
 
   <i class="fa fa-lightbulb-o" style="font-size:48px;color:red"></i> -->
 
-  <input class="l" type="checkbox" [checked]="lightsOn" (change)="switchLight()">
+  <input class="l border-neutral-900 dark:border-slate-50" type="checkbox" [checked]="lightsOn" (change)="switchLight()">
 </div>
+
+<div class="cross before:bg-neutral-900 dark:before:bg-slate-50
+after:bg-neutral-900 dark:after:bg-slate-50"></div>
 
 <router-outlet></router-outlet>
