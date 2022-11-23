@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ContainedScheiss';
   lightsOn = false;
+  currentRoute : string = "";
+
+  constructor(private router: Router) {
+    this.router.events.subscribe(e => {
+      if(e instanceof NavigationEnd){
+        this.currentRoute = e.url;
+      }
+    })
+  }
 
   switchLight(){
     this.lightsOn = !this.lightsOn;
@@ -19,5 +29,9 @@ export class AppComponent {
       document.getElementsByTagName("html")[0].className =
         document.getElementsByTagName("html")[0].className + " dark";
     }
+  }
+
+  onClickMiniLogo(){
+    this.router.navigate(['/']);
   }
 }

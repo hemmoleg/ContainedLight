@@ -1,26 +1,34 @@
 //cross
-.cross {
-  position: absolute;
-  right: 32px;
-  top: 32px;
-  width: 32px;
-  height: 32px;
+.cross{
+  height: 2rem;
+  width: 2rem;
+  &:after{
+    content: "\002b";
+    font-size: 50px;
+    position: relative;
+    top: -20px;
+  }
+
+  &.right{
+    margin-left: auto;
+  }
 }
-.cross:before, .cross:after {
-  position: absolute;
-  left: 15px;
-  content: ' ';
-  height: 1.5rem;
-  width: 0.1rem;
+
+.mini-logo-container{
+  cursor: pointer;
+  width: fit-content;
 }
-.cross:after {
-  transform: rotate(90deg);
+
+#logo{
+  width: 2rem;
+  height: 2rem;
+  //third value from right to adjust for length of "contained"
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 100%, 100% 0, 0 100%);
 }
 
 //toggle 2
 .toggle-container{
   display: flex;
-  position: absolute;
   top: 1rem;
   left: 1rem;
 }

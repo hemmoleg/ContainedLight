@@ -1,8 +1,11 @@
-<div class="h-[40vh]"></div>
-<div class="p-6 flex flex-col justify-center">
-  <span class="text-neutral-900 dark:text-slate-50 text-4xl font-bold text-center pb-16">Films</span>
+<div class="flex justify-center items-end special-height pb-[12vh]">
+  <div class="flex flex-col md:flex-row md:max-w-xl">
+    <div class="p-6 flex flex-col justify-center overflow-hidden">
+      <span class="text-neutral-900 dark:text-slate-50 text-4xl font-bold text-center pb-16">Films</span>
 
-  <span class="text-center text-l" *ngFor="let movie of movies">
-    <a class="text-neutral-900 dark:text-slate-50" [routerLink]="['/movies', movie.id]">{{movie.title}}</a>
-  </span>
+      <span class="text-center text-l pb-2" *ngFor="let movie of movies">
+        <a class="text-neutral-900 dark:text-slate-50" [routerLink]="['/movies', movie.id]">{{movie.title}}</a>
+      </span>
+    </div>
+  </div>
 </div>

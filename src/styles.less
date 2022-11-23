@@ -3,17 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+*, ::after, ::before{
   font-family: 'Noto Sans';
 
-  transition: background-color 5s, color 5s;
+  transition: background-color 1.5s, color 1.5s;
   transition-timing-function: ease-in-out;
-
-  //transition: color 5s;
- 
+  transition-delay: 0ms;
 }
 
-div::before, div::after{
-  transition: background-color 5s, color 5s;
-  transition-timing-function: ease-in-out;
+.special-height{
+  min-height: calc(100vh - 120px);
 }

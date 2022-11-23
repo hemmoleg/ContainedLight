@@ -1,28 +1,19 @@
-<!-- light switch-->
-<!-- <div class="flex justify-center">
-  <div class="form-check form-switch">
-    <input id="lightSwitch" class="form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top
-       bg-white bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm" 
-        type="checkbox" role="switch" id="flexSwitchCheckDefault" [checked]="lightsOn" (change)="switchLight()">
-    <label class="form-check-label inline-block text-gray-800" for="flexSwitchCheckDefault">Default switch checkbox input</label>
+<div class="flex flex-row overflow-hidden pt-7 mx-8">
+  <div class="toggle-container">
+    <input class="l border-neutral-900 dark:border-slate-50" type="checkbox" [checked]="lightsOn" (change)="switchLight()">
   </div>
-</div>   -->
-<div class="toggle-container">
-  <!-- <label class="slot">
-    <span class="slot-label">Lights</span>
-  </label>
-  <input class="toggle" type="checkbox" role="switch" name="toggle" value="on">
-  <label for="toggle" class="slot">
-    <span class="slot-label">FF</span>
-    <span class="slot-label">N</span>
-  </label>
-
-  <i class="fa fa-lightbulb-o" style="font-size:48px;color:red"></i> -->
-
-  <input class="l border-neutral-900 dark:border-slate-50" type="checkbox" [checked]="lightsOn" (change)="switchLight()">
+  <div class="cross right after:text-neutral-900 after:dark:text-slate-50 after:font-thin"></div>
 </div>
 
-<div class="cross before:bg-neutral-900 dark:before:bg-slate-50
-after:bg-neutral-900 dark:after:bg-slate-50"></div>
-
 <router-outlet></router-outlet>
+
+<div class="flex flex-row overflow-hidden pb-7 mx-8">
+  <div *ngIf="currentRoute == '/'" class="cross after:text-neutral-900 after:dark:text-slate-50 after:font-thin"></div>
+  
+  <div *ngIf="currentRoute != '/'" class="mini-logo-container"
+    (click)="onClickMiniLogo()">
+    <div id="logo" class=" bg-neutral-900 dark:bg-white"></div>
+  </div>
+
+  <div class="cross right after:text-neutral-900 after:dark:text-slate-50 after:font-thin"></div>
+</div>

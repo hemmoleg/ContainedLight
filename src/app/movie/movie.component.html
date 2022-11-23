@@ -1,9 +1,22 @@
-<h2>Movie Details</h2>
-
-<div *ngIf="movie">
-  <h3>{{ movie.title }}</h3>
-  <h4>{{ movie.price | currency }}</h4>
-  <p>{{ movie.description }}</p>
-  <!-- ../../assets/ -->
-  <img src="{{'./assets/' + movie.image}}"  alt="Girl in a jacket" width="500" height="600"> 
+<div *ngIf="movie" class="p-6 px-80 special-height">
+  <h1 class="text-4xl mb-6 text-center text-neutral-900 dark:text-slate-50">{{ movie.title }}</h1>
+  <div class="flex flex-col px-8">
+    <span class="pl-8 mb-2 text-neutral-900 dark:text-slate-50">{{ movie.info }}</span>
+    <span class="font-bold text-neutral-900 dark:text-slate-50">logline</span>
+    <span class="pl-8 mb-2 text-neutral-900 dark:text-slate-50">{{ movie.logline }}</span>
+    <span class="font-bold text-neutral-900 dark:text-slate-50">cast</span>
+    <div class="mb-2">
+      <span class="pl-8 text-neutral-900 dark:text-slate-50" *ngFor="let name of movie.cast">{{ name }}</span>
+    </div>
+    <span class="font-bold text-neutral-900 dark:text-slate-50">crew</span>
+    <div class="flex" *ngFor="let position of movie.crew">
+      <span class="pl-8 w-1/2 text-neutral-900 dark:text-slate-50">{{position.position}}</span>
+      <div class="flex w-1/2 justify-end flex-row flex-wrap">
+        <span class="w-fit table ml-8 text-neutral-900 dark:text-slate-50" *ngFor="let name of position.names">{{name}}</span>
+      </div>
+      <!-- <span class="pl-8 w-1/2 text-right">{{position.names}}</span> -->
+    </div>
+    <!-- ../../assets/ -->
+    <!-- <img src="{{'./assets/' + movie.image}}"  alt="Girl in a jacket" width="500" height="600">  -->
+  </div>
 </div>
